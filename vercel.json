@@ -1,7 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "functions": {
     "api/router.php": {
       "runtime": "vercel-php@0.7.3"
@@ -12,6 +10,7 @@
       "source": "/(.*\\.php)",
       "destination": "/api/router.php?file=$1"
     },
+    
     {
       "source": "/",
       "destination": "/api/router.php?file=index.php"
