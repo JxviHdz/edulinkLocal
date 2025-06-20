@@ -3,12 +3,18 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
-    "*.php": { "runtime": "vercel-php@0.5.2" }
+    "api/router.php": {
+      "runtime": "vercel-php@0.5.2"
+    }
   },
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.php"
+      "source": "/(.*\\.php)",
+      "destination": "/api/router.php?file=$1"
+    },
+    {
+      "source": "/",
+      "destination": "/api/router.php?file=index.php"
     }
   ]
 } 
