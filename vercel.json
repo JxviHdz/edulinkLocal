@@ -2,10 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "functions": {
+    "*.php": { "runtime": "vercel-php@0.5.2" }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/index.php"
     }
   ]
 } 
