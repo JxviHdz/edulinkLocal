@@ -10,6 +10,7 @@
       "source": "/(.*\\.php)",
       "destination": "/api/router.php?file=$1"
     },
+    
     {
       "source": "/",
       "destination": "/api/router.php?file=index.php"
